@@ -183,6 +183,12 @@ module Resque
           'total' => total
         }, *messages)
       end
+      
+      def status[]=(key, value)
+        tick({
+          key => value
+        })
+      end
 
       # sets the status of the job for the current itteration. You should use
       # the <tt>at</tt> method if you have actual numbers to track the iteration count.
