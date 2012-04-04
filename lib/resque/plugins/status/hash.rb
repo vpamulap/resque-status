@@ -193,7 +193,8 @@ module Resque
           super nil
           base_status = {
             'time' => Time.now.to_i,
-            'status' => 'queued'
+            'status' => 'queued',
+            'mystuff' => 'things'
           }
           base_status['uuid'] = args.shift if args.length > 1
           status_hash = args.inject(base_status) do |final, m|
