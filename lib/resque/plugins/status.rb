@@ -190,7 +190,7 @@ module Resque
       # <tt>Resque::Plugins::Status::Hash.kill()</tt>
       def tick(*messages)
         kill! if should_kill?
-        set_status({'status' => 'working'}, {'modsource' => 'moddedsource'} *messages)
+        set_status({'status' => 'working'}, {'modsource' => 'moddedsource'}, *messages)
       end
 
       # set the status to 'failed' passing along any additional messages
